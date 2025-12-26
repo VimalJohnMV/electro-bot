@@ -11,7 +11,7 @@ Built with **Python** and **Streamlit**, this project features a clean, responsi
 
 * **Electronics Specialist:** System-prompted to act as an Embedded Systems Engineer.
 * **Code Generation:** Generates ready-to-use C++ (Arduino) and MicroPython code.
-* **Smart & Fast:** Uses Gemini 1.5 Flash for rapid, accurate responses.
+* **Smart & Fast:** Uses Gemini 2.5 Flash for rapid, accurate responses.
 * **Context Aware:** Remembers your conversation history for follow-up questions.
 * **Secure:** Handles API keys safely using Streamlit Secrets.
 * **Web Interface:** A user-friendly chat UI that requires no HTML/CSS knowledge.
