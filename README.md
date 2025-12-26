@@ -1,6 +1,6 @@
 # ⚡ ElectroBot: Your AI Electronics Companion
 
-ElectroBot is an intelligent chatbot designed specifically for Embedded Systems Engineers, hobbyists, and students. Powered by Google's **Gemini 1.5 Flash**, it provides instant assistance with Arduino, ESP32, circuit design, and sensor interfacing.
+ElectroBot is an intelligent chatbot designed specifically for Embedded Systems Engineers, hobbyists, and students. Powered by Google's **Gemini 2.5 Flash**, it provides instant assistance with Arduino, ESP32, circuit design, and sensor interfacing.
 
 Built with **Python** and **Streamlit**, this project features a clean, responsive web interface that works locally or in the cloud.
 
