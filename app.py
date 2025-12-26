@@ -23,20 +23,26 @@ with st.sidebar:
     
     st.divider()
     st.markdown("Powered by **Gemini 2.5 Flash**")
-# 3. Initialize Chat History
+# --- 3. Initialize Chat History ---
+# Make sure this is inside the 'if not in' block!
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# 4. Display Chat Interface
-st.title("⚡ ElectroBot")
-st.caption("Ask me about Arduino, ESP32, Sensors, or Circuits.")
-
-# Show previous messages
+# --- 4. Display Chat Interface (THE MISSING PART) ---
+# This loop MUST run every time the script re-runs to draw old bubbles
 for message in st.session_state.messages:
-    # Convert 'model' role to 'assistant' for Streamlit display
+    # We need to translate 'model' (Gemini's name) to 'assistant' (Streamlit's name)
     role = "assistant" if message["role"] == "model" else "user"
+    
     with st.chat_message(role):
-        st.markdown(message["parts"])
+        # Check if 'parts' is a list or string (Gemini can be tricky)
+        content = message["parts"]
+        if isinstance(content, list):
+            content = content[0] # Grab the text from the list
+        st.markdown(content)
+# ---  Display Chat Interface ---
+st.title("⚡ ElectroBot")
+st.caption("Ask me about Arduino, ESP32, Sensors, Circuit Design, or Python for Hardware.")
 
 # 5. Handle User Input
 if prompt := st.chat_input("How do I connect a DHT11 to ESP32?"):
@@ -95,4 +101,5 @@ if prompt := st.chat_input("How do I connect a DHT11 to ESP32?"):
         st.session_state.messages.append({"role": "model", "parts": full_response})
 
     except Exception as e:
+
         st.error(f"Error: {e}")
