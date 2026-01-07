@@ -75,7 +75,7 @@ if prompt := st.chat_input("How do I connect a DHT11 to ESP32?"):
         # C. Initialize Model (Using a safer model name)
         # Note: If 'gemini-1.5-flash-latest' fails, try 'gemini-pro'
         model = genai.GenerativeModel(
-            model_name="gemini-3-flash",
+            model_name="gemini-2.5-flash",
             system_instruction=system_instruction
         )
 
@@ -103,4 +103,5 @@ if prompt := st.chat_input("How do I connect a DHT11 to ESP32?"):
     except Exception as e:
 
         st.error(f"Error: {e}")
+
 
